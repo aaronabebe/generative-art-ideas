@@ -37,7 +37,7 @@ function initCanvas() {
 	const step = 50;
 
 	for (let x = 0; x < W; x += step) {
-		for (let y = 0; y < H; y += step * 2) {
+		for (let y = 0; y < H; y += step) {
 			draw(x, y, step, step);
 		}
 	}

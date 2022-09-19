@@ -61,18 +61,18 @@ function getRandomInRange(min, max) {
 		}
 	};
 
-	const step = 20;
-	const grid = createGrid(step, (x, y) => (x / y) * Math.PI);
-	//drawGrid(grid, step, 'white');
+	const step = 50;
+	const grid = createGrid(step, (x, y) => (x/y) * Math.PI);
+	// drawGrid(grid, step, '#b2fc07');
 
-	const vertical_step = 50;
+	const vertical_step = 30;
 	const vertical_grid = createGrid(vertical_step, (x, y) => (x / y) * Math.PI * Math.random());
 
 	const right_step = 30;
 	const right_grid = createGrid(right_step, (x, y) => (y / x) * Math.PI * Math.random());
-	//drawGrid(right_grid, right_step, 'yellow');
+	// drawGrid(right_grid, right_step, 'blue');
 
-	//drawGrid(vertical_grid, vertical_step, 'yellow');
+	//drawGrid(vertical_grid, vertical_step, 'black');
 
 
 	const drawCurve = (x_start, y_start, curve_step, num_steps, grid, step, color) => {
@@ -96,17 +96,19 @@ function getRandomInRange(min, max) {
 	};
 
 	for (x = 0; x < W; x++) {
-		const gradient_ratio = Math.random();
-		const sub_color = Math.floor(255 - gradient_ratio);
-		const color = `rgb(${sub_color}, ${sub_color}, ${sub_color})`;	
-		drawCurve(x, 0, 10, Math.random() * 100, grid, step, Math.random() > 0.5 ? 'black' : 'beige');
+		//const gradient_ratio = Math.random();
+		//const sub_color = Math.floor(100 + gradient_ratio);
+		const color = `hsl(100, ${Math.random() * 100}%, 30%)`;	//'#098e17'
+		console.log(color);
+
+		drawCurve(x, 0, 10, Math.random() * 100, grid, step, Math.random() > 0.5 ? 'orange' : '#0FF');
 	}
 
 	for (y = 0; y < H; y++) {
 		const gradient_ratio = Math.random();
 		const sub_color = Math.floor(255 - gradient_ratio);
 		const color = `rgb(${sub_color}, ${sub_color}, ${sub_color})`;	
-		drawCurve(0, y, 10, Math.random() * 200, vertical_grid, vertical_step, Math.random() > 0.5 ? 'red' : '#ae53ed');
+		drawCurve(0, y, 10, Math.random() * 200, vertical_grid, vertical_step, Math.random() > 0.5 ? 'red' : 'blue');
 	}
 
 	for (x = W; x > 0; x--) {

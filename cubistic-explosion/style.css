@@ -1,0 +1,11 @@
+*, :root {
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+canvas {
+	background-color: #FDFEFD;
+	/* background-image: linear-gradient(to right top, #be1cbe, #9e4ed7, #776ae7, #4b7eed, #128deb); */
+}
+
